@@ -1,0 +1,10 @@
+const router = require('koa-router')()
+const getblog = require('./get')
+const delblog = require('./del')
+const addblog = require('./add')
+const fixblog = require('./fix')
+router.use('/get',getblog.routes(),getblog.allowedMethods())
+router.use('/del',delblog.routes(),delblog.allowedMethods())
+router.use('/add',addblog.routes(),addblog.allowedMethods())
+router.use('/fix',fixblog.routes(),fixblog.allowedMethods())
+module.exports = router
